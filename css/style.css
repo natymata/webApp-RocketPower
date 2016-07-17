@@ -1,0 +1,459 @@
+/*author:Natalie Mata-2015*/
+
+@font-face {
+    font-family: kollbean;
+    src: url(../fonts/kollbean.ttf);
+}
+
+@font-face {
+    font-family: GothamLight;
+    src: url(../fonts/gotham_light.eot);
+    src: url(../fonts/gotham-light.woff);
+}
+
+@font-face {
+    font-family: proxima-nova;
+    src: url(../fonts/proxima-nova.otf);
+}
+
+@font-face {
+    font-family: montserrat-regular;
+    src: url(../fonts/montserrat-regular.ttf);
+}
+
+
+.wrapper{
+	visibility: hidden;
+}
+
+body{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#007589+21,11325b+71,181733+100 */
+background: #007589; /* Old browsers */
+background: -moz-linear-gradient(45deg,  #007589 21%, #11325b 71%, #181733 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg,  #007589 21%,#11325b 71%,#181733 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg,  #007589 21%,#11325b 71%,#181733 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007589', endColorstr='#181733',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+input{
+	border:none;
+}
+
+h1, h2{
+	font-family:GothamLight, montserrat-regular, proxima-nova;
+	color: #fff;
+}
+
+h1{
+	font-size: 3.05em;
+	margin-top: 0em;
+	margin-left: 0;
+}
+
+h2{
+	font-size: 1.7em;
+}
+
+p, td{
+	font-size: 1.07em;
+}
+
+p{ 
+	color: #fff;
+}
+
+th{
+	color: #e79f17;
+	font-family: GothamLight;
+	font-weight: ;
+}
+
+legend{
+	font-size: 1.15em;
+	color: #fff;
+	font-family: GothamLight;
+	margin-top: 2.2em;
+	margin-bottom: 10px;
+}
+
+input[type=button]{
+	font-family: GothamLight;
+	font-weight: bold;
+}
+
+input[type=text]{
+	font-family:proxima-nova, GothamLight;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+a:visited, a:link {
+    text-decoration: none;
+	color: #fff;
+}
+
+table a{
+	padding: 2px;
+	display: block;
+}
+
+.logoContainer{
+	width: 20%;
+}
+
+.logoName{
+	font-family: kollbean;
+	font-size: 1.5714em;
+	text-decoration: none;
+	color: #e0e0e5;
+}
+
+.logoName a:hover{
+	text-decoration: none;
+}
+
+.logoName span{
+	font-style: italic;
+	text-decoration: none;
+	margin-left: 12px;
+	display: block;
+	position: absolute;
+	bottom: -17px;
+	color: #c6c7cb;
+	width: 100%;
+
+}
+
+.logoName, .logoName span {
+	font-family: ;
+	background: -webkit-linear-gradient(bottom, #E6E6E6, #BBBCBF);
+	background: linear-gradient(left, #fff, #666);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.modalLogo{
+	margin-top: 10px;
+}
+
+.userNameModal input[type=text]{
+	background-color: #282828;
+	padding: 12px;
+	color:#a0a2b2;
+	font-size: 1.14285em;
+}
+
+.userNameModal p{
+	color:#BD3744;
+}
+
+.addDataForm legend{
+	margin-top: 20px;
+}
+
+.paddingTop50{
+	padding-top: 1.4285em;
+}
+
+.main-bar{
+	padding: 0.8em;
+	background-color: #181833;
+
+}
+
+.main-section{
+	margin-top: 77px;
+}
+
+.nav-color{
+	background-color: rgba(255, 255, 255, 0.13);
+	border-radius: 7px;
+	margin-left: 2em;
+	margin-top: 2em;
+}
+
+.main-color{
+	background-color: rgba(255, 255, 255, 0.13);
+	border-radius: 7px;
+	padding-bottom: 24em;
+	margin: 2.5em;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+.control-nav{
+	margin-bottom:15px;
+}
+
+.sidebar li{
+	color: #fff;
+	text-decoration: none;
+	padding: 2px 5px;
+	/*border-left: 6px solid #282828;*/
+}
+.sidebar li a:hover{
+	color: #fff;
+background-color: rgba(26, 25, 54, 0.30);
+}
+
+.sidebar .active{
+	border-left: 6px solid #d0322a;
+}
+
+
+.sidebar .sidebarheader{
+	padding: 8px 5px;
+}
+
+.sidebar:first-child{
+	margin-top: 10px;
+}
+
+.sidebar a{
+	color:#ffffff;
+	text-decoration: none;
+	display: block;
+	line-height: 32px;
+}
+
+.sign{
+	border: 1px solid #fff;
+	border-radius: 50%;
+	font-size: 20px;
+	padding: 0 6px;
+	margin-right: 6px;1
+}
+
+.user-name{
+	color: #c2c2c2;
+	margin-top: 10px;
+	margin-right: 65px;
+	font-family:GothamLight, proxima-nova;
+}
+
+.form-control{
+	height: auto;
+	padding: 3px 0;
+	background-color:transparent;
+	border:none;
+	color: #fff;
+}
+
+.form-control label{
+	font-size: 0.9em;
+	width: 30%;
+}
+
+.form-control input[type=text], .form-control input[type=number]{
+	width: 60%;
+	border-radius: 5px;
+	font-size: 1em;
+	line-height: 1.6em;
+	color: #000;
+	padding: 3px 7px;
+}
+
+.form-control input[type=text], .form-control input[type=number]{
+	background-color: #dfe0e0;
+}
+
+.pError{
+	text-align: center;
+	color:#BD3744;
+}
+
+.form-control input[type=button]{
+	width: 60%;
+	margin: 1em auto;
+	background-color: #ec6630;
+	border:2px solid #db572e;
+	border-radius: 10px;
+	color: #fff;
+	padding: 3px 0;
+}
+#btnSignIn{
+	width: 100%;
+	margin: 1em auto;
+	background-color: #ec6630;
+	border:2px solid #db572e;
+	border-radius: 10px;
+	color: #fff;
+	padding: 8px 0;
+}
+
+.form-control input[type=button]:hover, .search-control input[type=button]:hover, #btnSignIn:hover{
+	border-color: #fff;
+}
+
+.btnIniciarAgregar{
+	display: block;
+}
+
+.results{
+	padding-top: 50px;
+}
+
+.results table{
+	width: 100%;
+}
+
+.results table, .results th, .results td{
+	border-collapse: collapse;
+	border-bottom: 1px solid;
+}
+.results table, .results td{
+	border-color: rgba(255, 255, 255, 0.35);
+}
+.results th{
+	border-color:#e79f17;
+};
+
+.results th, 
+.results td{
+	padding-left: 8%;
+}
+
+.row-estrellas, .row-planetas, .row-satelites, .row-programas, .row-misiones{
+	padding-top: 5.71428em;
+}
+
+.row-estrellas p, .row-planetas p, .row-satelites p, .row-programas p, .row-misiones p{
+	font-size: 0.9em;
+}
+
+.row-estrellas span, .row-planetas span, .row-satelites span, .row-programas span, .row-misiones span{
+	font-size: 1.2em;
+	color: #dfe0e6;
+} 
+
+.imgInsignia{
+	margin-top: 25px;
+}
+
+.results th{
+	text-transform: uppercase;
+	font-size: 1.18em;
+}
+
+.results table td{
+	color: #fff;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+.secondary-table{
+	margin-top: 2.85em;
+}
+
+.addDataForm input{
+	border: none;
+	border-radius: 50%;
+	font-size: 22px;
+	font-weight: bold;
+	padding: 2px 11px;
+	background-color: #0d69b5;
+	border-color:#fff;
+	color: #fff;
+	margin-left: 18px;
+	margin-bottom: 1em;
+	display: block;
+}
+.addDataForm input:hover{
+	background-color: #409abf;
+	border-color: #409abf;
+}
+
+.addDataForm select{
+	width: 97%;
+	font-size: 1.1em;
+	color:#757575;
+	padding: 4px;
+	padding-left: 8px;
+	display: block;
+	border-radius: 20px;
+}
+
+.addDataForm option{
+	color:#757575;
+}
+
+.btn-volver{
+	margin: 0 auto;
+	margin-top: 3em;
+	margin-right: 20px;
+
+	width: 100px;
+	background-color: #e79f17;
+	border:2px solid #dd8b14;
+	border-radius: 10px;
+	color: #fff;
+	padding: 3px 5px 3px 7px;
+}
+
+.btn-volver:hover{
+	border-color: #fff;
+	color: #fff;	
+}
+
+
+/*--------------clases de js--------------*/
+.displayBlock{
+	display: block;
+}
+
+.displayNone{
+	display:none;
+}
+
+.visibilityHidden{
+	visibility: hidden;
+}
+
+.visibilityVisible{
+	visibility: visible;
+}
+
+.error{
+	border: 1px solid red;
+}
+
+.imgBorder{
+	border: 3px solid blue;
+}
+
+
+
+/*----------------------MEDIA QUERY---------------------------------*/
+
+
+@media (max-width: 490px){
+	.user-icon{
+		max-width: 30%;
+	}
+
+	.user-name{
+		margin-top: 30px;
+		margin-bottom: 0;
+		font-size: 1em;
+	}
+
+	.logoName{
+		font-size: 1.35em;
+	}
+	.nav-color{
+	background-color: rgba(255, 255, 255, 0.13);
+	border-radius: 7px;
+	margin-left: 1.3em;
+	margin-right: 1.3em;
+	margin-top: 2em;
+   }
+	.main-color{ 
+	margin-left: 1.3em;
+	margin-right: 1.3em;
+}
+
+}
+

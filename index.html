@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Rocket Power</title>
+
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   	<link href="css/style.css" rel="stylesheet">
+   	<!--Bootstrap-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
+	<body id="body" class="body">
+		<!-- barra superior -->
+		<div class="main-bar navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-4 text-left">
+						<div class="logoContainer">
+							<a href="index.html" class="logoName">Rocket <span>Power</span></a>
+						</div><!--logocontainer-->
+					</div><!--col-sm-4-->
+					<div class="col-xs-4">
+						<a href="index.html"><img src="images/logo/rocket-power-logo.png" alt="Logo Rocket Power" width="60" height="60" class="center-block img-responsive"></a>
+					</div><!--col-sm-4-->
+					<div class="col-xs-4">
+
+						<a href="#" id="btnUserIcon"><img src="images/icons/user-icon.png" alt="icono de usuario" width="42" heigth="42" class="pull-right img-circle img-responsive user-icon"></a>
+						<p id="pUserName" class="text-right user-name"></p>
+					</div><!--col-sm-4-->
+				</div><!--row-->
+			</div><!--container-->
+		</div><!--main-bar-->
+		<!-- fin barra superior -->
+
+	<!--AQUÍ EMPIEZAN LOS MODALES-->
+	<!-- Modal insigModal -->
+		<div class="modal fade" id="insigModal" role="dialog">
+		    <div class="modal-dialog">
+		      <div class="modal-content">
+		        <div class="modal-header">
+		            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		          <h3 class="text-center">Escoger Insignia</h3>
+		        </div>
+		        <div class="modal-body">
+		        	<div class="row">
+		        		<div class="col-lg-12">
+		        			<div id="imgBox"></div>
+		        		</div>
+		        	</div>
+		        </div>
+		      </div>
+		    </div>
+		  </div><!--fin insigModal-->
+
+		  <!--userNameModal-->
+		   <div class="modal fade userNameModal" id="userNameModal" role="dialog">
+		    <div class="modal-dialog">
+		      <div class="modal-content">
+		        <div class="modal-header">
+		            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+		            <img src="images/logo/rocket-power-logo.png" alt="Logo Rocket Power" width="55" height="55" alt="company logo" class="center-block modal-title img-responsive modalLogo">
+		        </div>
+		        <div class="modal-body">
+		        	<p id="userNameError" class="text-center"></p>
+		          <form name="ingreso" id="ingreso">
+		            <div class="row">
+		              <div class="col-lg-12">
+		                  <input type="text" class="form-control" placeholder="Nombre" id="txtUserName" maxlength="25">
+		                </div>
+		              </div>
+		            </form>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" id="btnSignIn" class="btn-lg">Ingresar o Cambiar de Usuario</button>
+		        </div>
+		      </div>
+		    </div>
+		  </div><!--fin modal user name-->
+		 <!--AQUÍ TERMINAN LOS MODALES-->
+		
+		<!-- main wrapper -->
+		<section class="main-section wrapper">
+			<div class="container-fluid">
+				<div class="row"><!--main-row contiene todo menos la barra principal-->
+					<!--barra lateral de navegacion-->
+					<div class="col-sm-4 col-md-3 col-lg-2 nav-color">
+						<ul class="nav nav-pills nav-stacked navbar-fixed-side sidebar">
+								<div class="control-nav">
+									<li class="sidebarheader">CUERPOS CELESTES</li>
+									<li><a href="#" id="btnEstrella" class="top">Estrellas</a></li>
+									<li><a href="#" id="btnPlaneta" class="top">Planetas</a></li>
+									<li><a href="#" id="btnSatelite" class="top">Satélites</a></li>
+								</div><!--control-nav-->
+								<div class="control-nav">
+									<li class="sidebarheader">PROGRAMAS ESPACIALES</li>
+									<li><a href="#" id="btnProgramaEspacial">Programa Espacial</a></li>
+									<li><a href="#" id="btnMision">Misiones</a></li>
+								</div><!--control-nav-->
+							</ul>
+					</div><!--col-sm-4 col-md-3 col-lg-2 nav-color **barra lateral de navegacion fin**-->
+					
+					<!-- columna pricipal de la app -->
+					<div class="col-sm-8 col-md-9 col-lg-9 main-color"><!--col-sm-6 col-md-4 col-lg -->
+						<div class="row "><!--row row de interaccion con el usuario-->
+							<section class="paddingTop50" id="seccionObjetos">
+								<div class="col-sm-8 col-md-9 col-lg-6">
+									<div class="container-fluid">
+									<div class="row">
+										
+										<div class="col-sm-9 col-md-4 col-lg-6">
+											<h1 id="h1Class">Objeto</h1>
+										</div>
+									</div><!--row-->
+									</div><!--container-fluid-->
+								</div><!--col-sm-6 col-md-8 col-lg-10-->
+								<div class="col-sm-4 col-md-3 col-lg-7">
+									<form action="#" id="formEstrella">
+										<legend>Agregar Estrella</legend>
+										<p id="pEstrellaError" class="pError"></p>
+										<fieldset>
+											<div class="form-control">
+												<label for="txtNombreEstrella">Nombre</label>
+												<input type="text" id="txtNombreEstrella" placeholder="Sol">
+											</div><!--form-control-->
+											<div class="form-control">
+												<label for="txtMasaEstrella">Masa</label>
+												<input type="text" id="txtMasaEstrella" placeholder="1,9891x10 30 kg">
+											</div>
+											<div class="form-control">
+												<label for="txtTemperaturaEstrella">Temperatura</label>
+												<input type="text" id="txtTemperaturaEstrella" placeholder="5778k">
+											</div>
+											<div class="form-control">
+												<label for="txtDuracionDiaEstrella">Duración día</label>
+												<input type="text" id="txtDuracionDiaEstrella" placeholder="25 días">
+											</div>
+										</fieldset>
+										<fieldset>
+											<div class="form-control">
+												<label for="txtEdadEStrella">Edad</label>
+												<input type="text" id="txtEdadEStrella" placeholder="4.500 millones de años">
+											</div><!--form-control-->
+											<div class="form-control">
+												<label for="txtComposicionEstrella">Composición</label>
+												<input type="text" id="txtComposicionEstrella" placeholder="Hidrógeno, Helio, Oxígeno">
+											</div><!--form-control-->
+											<div class="form-control">
+												<label for="txtIntensidadLuminicaEstrella">Intensidad lumínica</label>
+												<input type="text" id="txtIntensidadLuminicaEstrella" placeholder="–26,8">
+											</div><!--form-control-->
+											<div class="form-control">
+												<label for="txtTamannoEstrella">Tamaño</label>
+												<input type="text" id="txtTamannoEstrella"  placeholder="1 392 000 km">
+											</div><!--form-control-->
+										</fieldset><!-- fin formEstrella -->
+										<div class="form-control sendObject">
+											<input type="button" id="btnSendEstrella" value="Agregar" class="center-block">
+									</div><!--form-control-->
+									</form><!--form estrella-->
+
+									<form action="#" id="formPlaneta">
+										<legend>Agregar Planeta</legend>
+										<p id="pPlanetaError" class="pError"></p>
+										<fieldset>
+											<div class="form-control">
+												<label for="txtNombrePlaneta">Nombre</label>
+												<input type="text" id="txtNombrePlaneta" placeholder="Mercurio">
+											</div><!--form-control-->
+											<div class="form-control">
+												<label for="txtMasaPlaneta">Masa</label>
+												<input type="text" id="txtMasaPlaneta" placeholder="0.055 tierras">
+											</div>
+											<div class="form-control">
+												<label for="txtTemperaturaPlaneta">Temperatura</label>
+												<input type="text" id="txtTemperaturaPlaneta" placeholder="178.9 C">
+											</div>
+											<div class="form-control">
+												<label for="txtDuracionDiaPlaneta">Duración día</label>
+												<input type="text" id="txtDuracionDiaPlaneta" placeholder="59 días terrestres">
+											</div>
+										</fieldset>
+										<fieldset>
+											<div class="form-control">
+												<label for="txtDistanciSolPlaneta">Distancia del Sol</label>
+												<input type="text" id="txtDistanciSolPlaneta" placeholder="0.39AU">
+											</div><!--form-control-->
+											<div class="form-control">
+												<label for="txtDuracionAnnoPlaneta">Duración año</label>
+												<input type="text" id="txtDuracionAnnoPlaneta" placeholder="0.241 años terrestres">
+											</div><!--form-control-->
+										</fieldset> <!-- fin form-planeta -->
+										<div class="form-control sendObject">
+											<input type="button" id="btnSendPlaneta" value="Agregar" class="center-block">
+									</div><!--form-control-->
+									</form><!-- form planeta -->
+
+									<form action="#" id="formSatelite">
+										<legend>Agregar Satélite</legend>
+										<p id="pSateliteError" class="pError"></p>
+										<fieldset>
+											<div class="form-control">
+												<label for="txtNombreSatelite">Nombre</label>
+												<input type="text" id="txtNombreSatelite" placeholder="Luna">
+											</div><!--form-control-->
+											<div class="form-control">
+												<label for="txtMasaSatelite">Masa</label>
+												<input type="text" id="txtMasaSatelite" placeholder="7,349 × 10 22">
+											</div>
+											<div class="form-control">
+												<label for="txtTemperaturaSatelite">Temperatura</label>
+												<input type="text" id="txtTemperaturaSatelite" placeholder="107 °C">
+											</div>
+											<div class="form-control">
+												<label for="txtDuracionDiaSatelite">Duración día</label>
+												<input type="text" id="txtDuracionDiaSatelite" placeholder="27,32 días">
+											</div>
+										</fieldset>
+										<fieldset>
+											<div class="form-control">
+												<label for="txtDistSatelCuerpSatelite">Dist Satelite-Cuerpo</label>
+												<input type="text" id="txtDistSatelCuerpSatelite" placeholder="384.400 km">
+											</div><!--form-control-->
+											<div class="form-control">
+												<label for="txtCaractSatelite">Características</label>
+												<input type="text" id="txtCaractSatelite" placeholder="Caraterísticas principales">
+											</div><!--form-control-->
+										</fieldset> <!-- fin form-satelite -->
+										<div class="form-control sendObject">
+											<input type="button" id="btnSendSatelite" value="Agregar" class="center-block">
+									</div><!--form-control-->
+									</form><!-- form satelite -->
+										
+									<form action="#" id="formProgEspacial">
+										<legend id="lgndProgEspacial">Agregar Programa Espacial</legend>
+										<p id="pProgEspacialError" class="pError"></p>
+										<fieldset>
+											<div class="form-control">
+												<label for="txtNombrePrograma">Nombre Prog</label>
+												<input type="text" id="txtNombrePrograma" placeholder="Gemini">
+											</div><!--form-control-->
+											<div class="form-control">
+												<label for="txtFechaInicio">Fecha Inicio</label>
+												<input type="text" id="txtFechaInicio" placeholder="mm/aa">
+											</div>
+											<div class="form-control">
+												<label for="txtFechaFin">Fecha Finalización</label>
+												<input type="text" id="txtFechaFin" placeholder="mm/aa">
+											</div>
+											<div class="form-control">
+												<label for="txtAlcance">Alcance</label>
+												<input type="text" id="txtAlcance" placeholder="Ganar experiencia para poder llevar al hombre a la luna">
+											</div>
+										</fieldset> <!-- fieldset -->	
+										<div class="form-control">
+											<input type="button" id="btnSendProgram" value="Agregar" class="center-block">
+										</div><!--form-control-->
+									</form> <!-- fin form-progEspacial -->
+
+									<form action="#" id="formMision">
+										<legend>Agregar Misión</legend>
+										<p id="pMisionError" class="pError"></p>
+										<fieldset>
+											<div class="form-control">
+												<label for="txtNombreMision">Nombre Misión</label>
+												<input type="text" id="txtNombreMision" placeholder="Gemini 3">
+											</div><!--form-control-->
+											<div class="form-control">
+												<label for="txtTripulantes">Tripulantes</label>
+												<input type="text" id="txtTripulantes" placeholder="Virgil I.Grissom, John W.Young">
+											</div>
+											<div class="form-control">
+												<label for="txtFechaLanzam">Fecha Lanzamiento</label>
+												<input type="text" id="txtFechaLanzam" placeholder="dd/mm/aa">
+											</div>
+											<div class="form-control">
+												<label for="txtDuracionMision">Duración misión</label>
+												<input type="text" id="txtDuracionMision" placeholder="4 horas, 52 minutos, 31 segundos">
+											</div>
+											<div class="form-control">
+												<label for="txtDatosInt">Datos interés</label>
+												<input type="text" id="txtDatosInt" placeholder="Primer vuelo tripulado del programa Gemini">
+											</div>
+											<div class="form-control">
+												<label for="txtResultMision">Resultado</label>
+												<input type="text" id="txtResultMision" placeholder="Exitoso">
+											</div>
+											<div class="form-control">
+												<label for="txtInsignia">Insingnia</label>
+												<input type="text" id="txtInsignia" placeholder="click">
+											</div>
+											<div class="form-control">
+												<label for="txtNave">Nave</label>
+												<input type="text" id="txtNave" placeholder="Gemini 3">
+											</div>
+										</fieldset> <!-- fieldset cuerpoCeleste -->
+										<div class="form-control">
+											<input type="button" id="btnSendMision" value="Agregar" class="center-block">
+										</div><!--form-control-->
+									</form> <!-- fin form-progEspacial -->
+								</div><!--col-sm-12-->
+							</section><!--seccio objetos-->
+						</div><!--row row de interaccion con el user-->
+
+						<div class="row"><!--row de tablas de resultados-->
+							<section id="seccionResultados">
+								<div class="col-sm-12">
+									<div class="resultados-estrellas results" id="resultEstrellas"> <!-- div que engloba todos los resultados de clase-->
+										<div id="listaEstrellas"> <!-- solo la lista inicial -->
+											<table id="tblEstrellas" class="result-table">
+												<thead>
+													<tr>
+														<th>Lista Estrellas</th>
+													</tr>
+												</thead>
+												<tbody>
+												</tbody>
+											</table><!--tblEstrellas-->
+										</div><!-- listaEstrellas -->
+										<div class="row row-estrellas" id="rowEstrellas">
+											<div class="col-sm-8 col-md-9">
+												<div class="row">
+													<div class="col-sm-4 col-md-3">
+														<img src="images/icons/estrellas.png" alt="logo estrellas" width="168" height="174" class="center-block img-icon">
+													</div>
+													<div class="col-sm-6 col-md-9">
+														<div id="infoEstrella">
+															<h2>Nombre Estrella: <span></span></h2>
+															<p>Masa:<span></span></p>
+															<p> Temperatura Media: <span></span></p>
+															<p>Duración de un día: <span></span></p>
+
+															<p>Edad: <span></span></p>
+															<p>Composición: <span></span></p>
+															<p>Intensidad Lumínica: <span></span></p>
+															<p>Tamaño: <span></span></p>
+															<p>Misiones Asociadas:  <span></span></p>
+														</div><!-- infoestrella div -->
+													</div><!--col-sm-9 col-md-10-->
+												</div><!--row-->
+											</div><!--col-sm-8 col-md-9-->
+											<div class="row">
+											<div class="col-sm-12">
+												<div class="volver">
+														<a href="#" id="btnVolverEstrella" class="btn-volver pull-right text-center">Regresar</a>
+												</div>
+											</div>
+										</div>
+										</div><!--row-->
+									</div><!-- div que engloba todos los resultados de clase estrella-->
+
+									<div class="resultados-planetas results" id="resultadosPlanetas"> <!-- div que engloba todos los resultados de clase planeta-->
+										<div id="listaPlanetas"> <!-- solo la lista inicial -->
+											<table id="tblPlanetas" class="result-table">
+												<thead>
+													<tr>
+														<th>Lista Planetas</th>
+													</tr>
+												</thead>
+												<tbody>
+												</tbody>
+											</table><!--tblPlanetas-->
+										</div><!-- listaPlanetas -->
+										<div class="row row-planetas" id="rowPlanetas">
+											<div class="col-sm-8 col-md-9">
+												<div class="row">
+													<div class="col-sm-4 col-md-3">
+														<div class="col-sm-4 col-md-3">
+															<img src="images/icons/planetas.png" alt="logo planetas" width="168" height="174" class="center-block img-icon">
+													</div>
+													</div>
+													<div class="col-sm-6 col-md-9">
+														<div id="infoPlanetas">
+															<h2>Nombre Planeta: <span></span></h2>
+															<p>Masa:<span></span></p>
+															<p>Temperatura Media: <span></span></p>
+															<p>Duración de un día: <span></span></p>
+
+															<p>Distancia media del Sol: <span></span></p>
+															<p>Duracion de un año: <span></span></p>
+															<p>Cantidad de Satélites: <span id="cantSat"></span></p>
+															<p>Misiones Asociadas: <span></span></p>
+														</div><!-- infoestrella div -->
+													</div><!--col-sm-9 col-md-10-->
+												</div><!--row-->
+												<div class="row">
+												<table class="secondary-table tblMisionesCuerpo" id="tblSatelXPlanet">
+													<thead>
+														<tr>
+															<th>Lista Satélites del Planeta</th>
+														</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table><!--tblMisionesCuerpo-->
+											</div><!--row-->
+											</div><!--col-sm-8 col-md-9-->
+											<div class="col-sm-4 col-md-3">
+												<form action="#"  class="addDataForm">
+													<legend>Agregar Satélite a al Planeta</legend>
+													<input type="button" id="btnAddSatellPlanet" value="+">
+													<div class="selectControl" id="selectControlPlaneta">
+														<select id="sltPlaneta">
+															<option value="">--Seleccione--</option>
+														</select>
+													</div>
+												</form>
+											</div><!--col-sm-4 col-md-3-->
+										</div><!--row-->
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="volver">
+														<a href="#" id="btnVolverPlanet" class="btn-volver pull-right text-center">Regresar</a>
+												</div>
+											</div>
+										</div>
+									</div><!-- div que engloba todos los resultados de clase-->
+
+									<div class="resultados-satelites results" id="resultadosSatelites"> <!-- div que engloba todos los resultados de clase Satelite-->
+										<div id="listaSatelites"> <!-- solo la lista inicial -->
+											<table id="tblSatelites" class="result-table">
+												<thead>
+													<tr>
+														<th>Lista Satélites</th>
+													</tr>
+												</thead>
+												<tbody>
+												</tbody>
+											</table><!--tblSatelites-->
+										</div><!-- listaEstrellas -->
+										<div class="row row-satelites" id="rowSatelites">
+											<div class="col-sm-8 col-md-9">
+												<div class="row">
+													<div class="col-sm-4 col-md-3">
+														<img src="images/icons/satelites.png" alt="logo satelites" width="168" height="174" class="center-block img-icon">
+													</div>
+													<div class="col-sm-6 col-md-9">
+														<div id="infoSatelites">
+															<h2>Nombre Satélite: <span></span></h2>
+															<p>Masa:<span></span></p>
+															<p>Temperatura Media: <span></span></p>
+															<p>Duración de un día: <span></span></p>
+
+															<p>Distancia media entre el Satélite y el cuerpo que orbita: <span></span></p>
+															<p>Características principales: <span></span></p>
+															<p>Planeta al que pertenece: <span></span></p>
+															<p>Misiones asociadas: <span></span></p>
+														</div><!-- info satelite div -->
+													</div><!--col-sm-9 col-md-10-->
+												</div><!--row-->
+											</div><!--col-sm-8 col-md-9-->
+											<div class="row">
+											<div class="col-sm-12">
+												<div class="volver">
+														<a href="#" id="btnVolverSatell" class="btn-volver pull-right text-center">Regresar</a>
+												</div>
+											</div>
+										</div>
+										</div><!--row-->
+									</div><!-- div que engloba todos los resultados de clase-->
+
+									<div class="resultados-programas results" id="resultadosProgramas"> <!-- div que engloba todos los resultados de clase Satelite-->
+										<div id="listaProgramas"> <!-- solo la lista inicial -->
+											<table id="tblProgramas" class="result-table">
+												<thead>
+													<tr>
+														<th>Lista Programas</th>
+													</tr>
+												</thead>
+												<tbody>
+												</tbody>
+											</table><!--tbl programa-->
+										</div><!-- lista programas -->
+										<div class="row row-programas" id="rowProgramas">
+											<div class="col-sm-8 col-md-9">
+												<div class="row">
+													<div class="col-sm-4 col-md-3">
+														<img src="images/icons/programas.png" alt="logo programas" width="168" height="174" class="center-block img-icon">
+													</div>
+													<div class="col-sm-6 col-md-9">
+														<div id="infoProgramas">
+															<h2>Nombre Programa: <span></span></h2>
+															<p>Fecha Inicio:<span></span></p>
+															<p>Fecha Finalización: <span></span></p>
+															<p>Alcance: <span></span></p>
+														</div><!-- info programa div -->
+													</div><!--col-sm-9 col-md-10-->
+												</div><!--row-->
+												<div class="row">
+												<table class="secondary-table" id="tblMisionesxPrograma">
+													<thead>
+														<tr>
+															<th>Lista Misiones del Programa</th>
+														</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table><!--tblMisionesprograma-->
+											</div><!--row-->
+											</div><!--col-sm-8 col-md-9-->
+											<div class="col-sm-4 col-md-3">
+												<form action="#"  class="addDataForm">
+													<legend>Agregar Misión a al Programa</legend>
+													<input type="button" id="btnAddMisionPrograma" value="+">
+													<div class="selectControl" id="selectControlProgram">
+														<select id="sltMisionPrograma">
+															<option value="">--Seleccione--</option>
+														</select>
+													</div>
+												</form>
+											</div><!--col-sm-4 col-md-3-->
+											<div class="row">
+											<div class="col-sm-12">
+												<div class="volver">
+														<a href="#" id="btnVolverPrograma" class="btn-volver pull-right text-center">Regresar</a>
+												</div>
+											</div>
+										</div>
+										</div><!--row-->
+
+									</div><!-- div que engloba todos los resultados de clase-->
+
+									<div class="resultados-misiones results" id="resultadosMisiones"> <!-- div que engloba todos los resultados de clase Satelite-->
+										<div id="listaMisiones"> <!-- solo la lista inicial -->
+											<table id="tblMisiones" class="result-table">
+												<thead>
+													<tr>
+														<th>Lista Misiones</th>
+													</tr>
+												</thead>
+												<tbody>
+												</tbody>
+											</table><!--tbl mision-->
+										</div><!-- lista misiones -->
+										<div class="row row-misiones" id="rowMisiones">
+											<div class="col-sm-8 col-md-9">
+												<div class="row">
+													<div class="col-sm-4 col-md-3">
+														<img src="images/icons/misones.png" id="imgInsignia" alt="logo misiones" width="113" height="100" class="center-block img-icon imgInsignia">
+													</div>
+													<div class="col-sm-6 col-md-9">
+														<div id="infoMsiones">
+															<h2>Nombre Mision: <span></span></h2>
+															<p>Tripulantes: <span></span></p>
+															<p>Fecha Lazamiento: <span></span></p>
+															<p>Duración tiempo:  <span></span></p>
+															<p>Datos de interés:  <span></span></p>
+															<p>Resultado:  <span></span></p>
+															<p>Nave:  <span></span></p></p>
+															<p>Programa al que pertenece: <span></span></p>
+														</div><!-- info programa div -->
+													</div><!--col-sm-9 col-md-10-->
+												</div><!--row-->
+												<div class="row">
+												<table class="secondary-table" id="tblCuerposxMision">
+													<thead>
+														<tr>
+															<th>Cuerpos Celestes Asociados a la Misión</th>
+														</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table><!--tblCuerposxMision-->
+											</div><!--row-->
+											</div><!--col-sm-8 col-md-9-->
+											<div class="col-sm-4 col-md-3">
+												<form action="#"  class="addDataForm">
+													<legend>Agregar Cuerpo Celeste a la Misión</legend>
+													<input type="button" id="btnAddCuerpoMision" value="+">
+													<div class="selectControl" id="selectControlMision">
+														<select id="sltCuerpoMision">
+															<option value="">--Seleccione--</option>
+														</select>
+													</div>
+												</form>
+											</div><!--col-sm-4 col-md-3-->
+											<div class="row">
+											<div class="col-sm-12">
+												<div class="volver">
+													<a href="#" id="btnVolverMision" class="btn-volver pull-right text-center">Regresar</a>
+												</div>
+											</div>
+										</div>
+										</div><!--row-->
+									</div><!-- div que engloba todos los resultados de clase-->
+
+								</div><!--col-sm-12-->
+							</section><!-- seccionResultados -->
+						</div><!--row row de resultados-->
+
+					</div><!--col-sm-8 col-md-9 col-lg-10 main-color-->
+
+				</div><!--row main-row que contiene tofo-->
+			</div><!--container-fluid-->
+		</section><!-- main section wrapper -->
+		
+		<script src="logic/cuerpoCeleste.js"></script>
+		<script src="logic/programaEspacial.js"></script>
+		<script src="logic/estrella.js"></script>
+		<script src="logic/planeta.js"></script>
+		<script src="logic/satelite.js"></script> 
+		<script src="logic/mision.js"></script> 
+		<script src="logic/logic.js"></script>
+
+		 <!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	    <script src="bootstrap/js/bootstrap.min.js"></script>  
+
+	</body>
+</html>
